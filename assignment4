@@ -1,0 +1,41 @@
+```{r func_def, echo=TRUE}
+compute_area <- function(r_in, shape_str){
+  if(shape_str == "circle"){
+    area <- pi * r_in^2
+    circum <- 2 * pi * r_in
+  } else if (shape_str == "square"){
+    area <- r_in^2	
+    circum <- 2 * r_in
+  } else {
+    ret <- -1
+  }
+	return(area, shape_str)
+}
+
+假設你的函數名稱也是compute_area，且參數順序是邊長（半徑）和形狀，那以下的結果應該要是一樣的。
+
+```{r func.call.circle, echo=TRUE}
+circ_ret <- compute_area(r, "circle")
+# call your function (circle), 
+# e.g. circ_ret <- compute_area(6.5, "circle")
+```
+
+```r
+circ_ret <- compute_area(6.5, "circle")
+##   circle_area circle_circum 
+##      132.7323       40.8407
+```
+
+```{r func.call.square, echo=TRUE}
+sqr_ret <- compute_area(r_in, "square")
+# call your function (square), 
+# e.g. sqr_ret <- compute_area(5.2, "square")
+```
+
+```r
+sqr_ret <- compute_area(5.2, "square")
+##   square_area square_circum 
+##         27.04         20.80
+```
+
+#### 評分標準：
